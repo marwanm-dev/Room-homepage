@@ -1,0 +1,316 @@
+@use '../base' as *;
+
+body {
+  overflow: hidden;
+  @media (max-width: 1060px) {
+    overflow: auto;
+  }
+}
+// __________Hero_Section__________
+.hero {
+  @include flex(center);
+  width: 100%;
+  @media (max-width: 1060px) {
+    @include flex(space-between, column);
+  }
+  // Hero slider
+  .hero__slider {
+    width: 50%;
+    height: 57vh;
+    position: relative;
+
+    transform: translate(-500px, 0);
+    opacity: 0;
+    display: none;
+    @media (max-width: 1060px) {
+      width: 100%;
+    }
+    // Nav/s
+    .mobile__nav.opened {
+      .close {
+        display: initial;
+      }
+      .open {
+        display: none;
+      }
+      .menu {
+        display: initial;
+      }
+    }
+    .mobile__nav {
+      @include flex();
+      width: 100%;
+      position: absolute;
+      top: 2rem;
+      left: 0rem;
+      padding: 0 5rem;
+      display: none;
+      z-index: 9999999;
+      img {
+        cursor: pointer;
+      }
+      .close {
+        display: none;
+      }
+      .open {
+        // display: none;
+      }
+      @media (max-width: 415px) {
+        padding: 0 2rem;
+      }
+      .menu {
+        left: 5rem;
+        right: 5rem;
+        top: 2.5rem;
+        border-radius: 0.5rem 0 0.5rem 0.5rem;
+        height: 5rem;
+        background: $white;
+        position: absolute;
+        display: none;
+        margin: 0 2.5rem;
+
+        @media (max-width: 570px) {
+          height: 12rem;
+          left: 2rem;
+          right: 2rem;
+        }
+        @media (max-width: 415px) {
+          left: 0.375rem;
+          right: 0.375rem;
+        }
+        .links {
+          width: 20rem;
+          margin: 2rem auto;
+          @include flex(space-around);
+          @media (max-width: 570px) {
+            @include flex(center, column);
+            text-align: center;
+            & > * {
+              margin-bottom: 1rem;
+            }
+          }
+          li {
+            color: $black;
+            cursor: pointer;
+            position: relative;
+            font-size: 1rem;
+            &:before {
+              content: '';
+              width: 100%;
+              height: 1px;
+              background: $black;
+              position: absolute;
+              bottom: -5px;
+              transform-origin: left;
+              transform: scaleX(0);
+            }
+            &:hover:before {
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+    }
+
+    .desktop__nav {
+      @include flex();
+      width: 30rem;
+      position: absolute;
+      top: 2rem;
+      left: 0rem;
+
+      img {
+        cursor: pointer;
+      }
+      @media (max-width: 1420px) {
+        width: 25rem;
+      }
+      @media (max-width: 1060px) {
+        width: 35rem;
+        position: relative;
+        margin: -1rem auto;
+        padding-top: 1rem;
+      }
+      img {
+        flex-basis: 4rem;
+        margin: 0 1rem;
+      }
+      .links {
+        width: 20rem;
+        @include flex(space-around);
+        li {
+          color: $white;
+          cursor: pointer;
+          position: relative;
+          font-size: 0.85rem;
+          &:before {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background: $white;
+            position: absolute;
+            bottom: -5px;
+            transform-origin: left;
+            transform: scaleX(0);
+          }
+          &:hover:before {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+    // images
+    .images {
+      width: 100%;
+      height: 100%;
+      @media (max-width: 1060px) {
+        height: 110%;
+      }
+      @media (max-width: 600px) {
+        width: 37.5rem;
+        height: 20rem;
+      }
+      @media (max-width: 400) {
+        height: 15rem;
+      }
+      .desktop__image {
+        width: 100%;
+        height: 100%;
+      }
+      .mobile__image {
+      }
+    }
+    .button {
+      width: 12rem;
+      height: 4.5rem;
+      position: absolute;
+      bottom: 0;
+      right: -12rem;
+
+      transform: translate(-200px, 0);
+      opacity: 0;
+      display: none;
+      @media (max-width: 1420px) {
+        width: 10.5rem;
+        height: 4rem;
+        right: -10.5rem;
+      }
+      @media (max-width: 1060px) {
+        width: 11rem;
+        height: 3.5rem;
+        bottom: -3.2rem;
+        right: 0rem;
+      }
+      @media (max-width: 600px) {
+        bottom: 10.9rem;
+      }
+
+      @include flex();
+      button,
+      img {
+        background: $black;
+        cursor: pointer;
+      }
+      button {
+        flex-basis: 50%;
+        height: 100%;
+        &:hover {
+          opacity: 0.925;
+          &:nth-of-type(1) > img {
+            transform: translateX(-10px);
+          }
+          &:nth-of-type(2) > img {
+            transform: translateX(10px);
+          }
+        }
+      }
+    }
+  }
+}
+// Content
+.hero__content {
+  margin-top: -5rem;
+  width: 50%;
+  height: 100%;
+  padding: 0 8rem;
+
+  transform: translate(500px, 0);
+  opacity: 0;
+  display: none;
+  @media (max-width: 1420px) {
+    padding: 1.5rem 8rem;
+  }
+  @media (max-width: 1280px) {
+    padding: 1rem 5rem;
+    width: 60%;
+  }
+  @media (max-width: 1060px) {
+    margin-top: 3rem;
+    padding: 2rem;
+    width: 100%;
+  }
+  @media (max-width: 600px) {
+    margin-top: -10rem;
+  }
+  .title {
+    margin-bottom: $space;
+    @media (max-width: 1060px) {
+      margin-bottom: $space * 2;
+    }
+    color: $black;
+  }
+  .desc {
+    margin-bottom: $space;
+    @media (max-width: 1060px) {
+      margin-bottom: $space * 2;
+    }
+    color: $text__color;
+  }
+  .cta {
+    color: $accent__color;
+    img {
+      margin-top: 0.5rem;
+    }
+    &:hover {
+      opacity: 0.5;
+    }
+    &:hover > img {
+      margin-left: 5rem;
+    }
+  }
+}
+// __________Preview_Section__________
+.preview {
+  width: 100%;
+
+  transform: translate(0, 500px);
+  opacity: 0;
+  display: none;
+  @include flex();
+  @media (max-width: 1060px) {
+    @include flex(center, column);
+  }
+  &__about {
+    min-width: 450px;
+    flex-basis: 50%;
+    padding: 5.75rem 2.5rem;
+    h2 {
+      margin-bottom: $space;
+      color: $accent__color;
+    }
+    @media (max-width: 410px) {
+      padding: 7.75rem 3.5rem;
+    }
+  }
+  &__image {
+    width: 100%;
+    @media (max-width: 1060px) {
+      width: 90%;
+      padding: 2rem;
+    }
+    &-left {
+    }
+    &-right {
+    }
+  }
+}
