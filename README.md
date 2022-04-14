@@ -1,4 +1,4 @@
-# room-homepage
+# Room-homepage
 
 - Fully responsive & animated
 
@@ -7,14 +7,10 @@
   Sass
   Javascript
 
-# Features
-
--
-
 # Live
 
 - https://marodevv-room-homepage.pages.dev/
 
 # Credit
 
-- Inspired by ${Name}
+- Inspired by Frontend Mentor
