@@ -9,7 +9,7 @@
 
 # Live
 
-- https://marodevv-room-homepage.pages.dev/
+- https://marodevv-room-homepage.vercel.app
 
 # Credit
 
