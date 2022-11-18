@@ -10,7 +10,7 @@
 
 ## Live
 
-> https://marwanmodev-room-homepage.vercel.app
+> https://marwanm-room-homepage.vercel.app
 
 ## Credit
 
